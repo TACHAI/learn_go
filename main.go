@@ -3,6 +3,7 @@ package main
 import (
 	"awesomeProject/gorotine"
 	"awesomeProject/interface_demo"
+	"awesomeProject/json_demo"
 	"awesomeProject/point_demo"
 	"awesomeProject/struct_demo"
 	"time"
@@ -27,6 +28,11 @@ func main()  {
 
 
     point_demo.TestPoint()
+
+    json_demo.Serialize()
+    json_demo.SerializeMap()
+    json_demo.DeSerializeStruct()
+    json_demo.DeSerializeMap()
 }
 
 func action(b interface_demo.Behavior)string  {
