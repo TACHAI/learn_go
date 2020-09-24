@@ -33,6 +33,13 @@ func main()  {
     json_demo.SerializeMap()
     json_demo.DeSerializeStruct()
     json_demo.DeSerializeMap()
+
+
+    go gorotine.Send()
+
+
+    go gorotine.Receive()
+    time.Sleep(time.Second*10)
 }
 
 func action(b interface_demo.Behavior)string  {
