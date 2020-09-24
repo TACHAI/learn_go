@@ -6,6 +6,7 @@ import (
 	"awesomeProject/json_demo"
 	"awesomeProject/point_demo"
 	"awesomeProject/struct_demo"
+	"fmt"
 	"time"
 )
 
@@ -34,12 +35,19 @@ func main()  {
     json_demo.DeSerializeStruct()
     json_demo.DeSerializeMap()
 
-
+	// 协程通信
     go gorotine.Send()
-
-
-    go gorotine.Receive()
+    //go gorotine.Receive()
+    go gorotine.Receive2()
     time.Sleep(time.Second*10)
+
+    // 协程同步
+    gorotine.Read()
+    go gorotine.Write()
+    gorotine.WG.Wait()
+    fmt.Println("All done!")
+    time.Sleep(time.Second*60)
+
 }
 
 func action(b interface_demo.Behavior)string  {
